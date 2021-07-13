@@ -10,10 +10,15 @@ public class LegacyService {
         if (!identificationNo.startsWith("1")) {
             return LegacyResponse.builder().incomingRequest(null).id("Invalid").build();
         }
+
+        LegacyResponse response = LegacyResponse.builder().id(identificationNo).incomingRequest(request).build();
+
         if (request.vin.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");
         }
-        LegacyResponse response = LegacyResponse.builder().id(identificationNo).incomingRequest(request).build();
+        if (request.vin.contains("test")) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");
+        }
         return response;
     }
 }

@@ -1,6 +1,7 @@
 # Read Me First
 This is a kata for practicing IntelliJ Shortcuts.  
 It is not intended to be a meaningful service that accomplishes anything useful.
+Run tests before start and run them every few minutes to confirm refactor worked.
 
 # Getting Started
 
@@ -13,13 +14,21 @@ It is not intended to be a meaningful service that accomplishes anything useful.
 * Extract Field - Ctrl+Alt+F (Windows) or Command+Option+F (Mac)
 * Check for refactoring suggestions - Alt+Enter (Windows) or Control+Enter (Mac)
 * Generate Test method - Alt+Insert (Windows) or Command+N (Mac)
-* Move line or whole method up - Ctrl+Shift+Up Arrow (Windows) or Command+Shift+Up Arrow
+* Move line or whole method up - Ctrl+Shift+Up Arrow (Windows) or Command+Shift+Up Arrow (Mac)
 * Copy whole line - Have cursor on line with nothing highlighted and Ctrl+C or Command+C
+* Go to method signature - Ctrl+click (Windows) or Command+click (Mac)
+* Return to previous place/class - Ctrl+Alt+Left Arrow (Windows) or Command+Option+Left Arrow (Mac)
 
 ### Practice Steps
 
-* Extract Variables
-* Extract Methods
+Extract Variables in LegacyService
+* Extract request.vin as a variable (both instances of it) and name it "vin"
+* Extract "This vin is not valid" as a variable (both instances of it) and name it "errorMessage"
+* Extract "1" as a variable named "vinPattern"
+* Extract "Invalid" as a variable named "invalidVinMessage"
+
+Extract Methods in LegacyService
+* Extract 
 * Inline Variables
 * Extract Parameter
 * Extract Field

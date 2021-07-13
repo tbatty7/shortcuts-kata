@@ -43,5 +43,10 @@ class LegacyServiceTest {
         legacyService.convert(request, "myId");
     }
 
+    @Test
+    void throwsBadRequestIfRequestHasTestVIN() throws HttpClientErrorException.BadRequest {
+        LegacyRequest request = LegacyRequest.builder().vin("123test").build();
 
+        legacyService.convert(request, "myId");
+    }
 }
