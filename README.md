@@ -8,6 +8,7 @@ It is not intended to be a meaningful service that accomplishes anything useful.
 
 * Extract Variable - Ctrl+Alt+V (Windows) or Command+Option+V (Mac)
 * Extract Method - Ctrl+Alt+M (Windows) or Command+Option+M (Mac)
+* Inline - Ctrl+Alt+N (Windows) or Command+Option+N (MAC)
 * Extract Parameter - Ctrl+Alt+P (Windows) or Command+Option+P (Mac)
 * Extract Field - Ctrl+Alt+F (Windows) or Command+Option+F (Mac)
 * Check for refactoring suggestions - Alt+Enter (Windows) or Control+Enter (Mac)
@@ -19,6 +20,7 @@ It is not intended to be a meaningful service that accomplishes anything useful.
 
 * Extract Variables
 * Extract Methods
+* Inline Variables
 * Extract Parameter
 * Extract Field
 * Invert If condition with IntelliJ refactoring suggestions
