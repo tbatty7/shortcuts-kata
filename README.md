@@ -11,7 +11,9 @@ It is not intended to be a meaningful service that accomplishes anything useful.
 * Extract Parameter - Ctrl+Alt+P (Windows) or Command+Option+P (Mac)
 * Extract Field - Ctrl+Alt+F (Windows) or Command+Option+F (Mac)
 * Check for refactoring suggestions - Alt+Enter (Windows) or Control+Enter (Mac)
-* Generate Test method - Alt+Insert
+* Generate Test method - Alt+Insert (Windows) or Command+N (Mac)
+* Move line or whole method up - Ctrl+Shift+Up Arrow (Windows) or Command+Shift+Up Arrow
+* Copy whole line - Have cursor on line with nothing highlighted and Ctrl+C or Command+C
 
 ### Practice Steps
 
