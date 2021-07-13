@@ -1,0 +1,49 @@
+{
+	"info": {
+		"_postman_id": "fcdc9043-80c7-43f8-b06c-8df3d3c0bf06",
+		"name": "Shortcut Kata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shortcut Kata Test",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Identification-No",
+						"value": "1234",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"vin\": \"asdf89f\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/do-stuff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"do-stuff"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

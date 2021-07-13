@@ -1,5 +1,6 @@
 package com.battybuilds.shortcutskata;
 
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,7 +15,7 @@ public class LegacyController {
         this.service = service;
     }
 
-    @PostMapping("/do-stuff")
+    @PostMapping(value = "/do-stuff")
     public ResponseEntity<LegacyResponse> wakeUp(@RequestHeader(value = "Identification-No")
                                                          String identificationNo,
                                                  @RequestBody
