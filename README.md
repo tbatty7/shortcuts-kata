@@ -24,13 +24,29 @@ Run tests before start and run them every few minutes to confirm refactor worked
 Extract Variables in LegacyService
 * Extract request.vin as a variable (both instances of it) and name it "vin"
 * Extract "This vin is not valid" as a variable (both instances of it) and name it "errorMessage"
-* Extract "1" as a variable named "vinPattern"
+* Extract "1" as a variable named "prefix"
 * Extract "Invalid" as a variable named "invalidVinMessage"
+* Inline all four extracted variables
 
 Extract Methods in LegacyService
-* Extract 
-* Inline Variables
-* Extract Parameter
+* Extract ```!identificationNo.startsWith("1")``` to a method named "isInvalid(identificationNo)"
+* Extract ```LegacyResponse.builder().id(identificationNo).incomingRequest(request).build();``` to a method named "buildResponse(request, identificationNo)"
+  * Notice that the builder in the first If statement did not get extracted
+  * Inline the "buildResponse" method 
+  * Change the builder so the incomingRequest is set first
+  * Extract the method again and select the option to extract the second method also
+* Extract ```throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");``` to a method named "getLegacyResponse"
+  * Select option to extract the second method also
+  * Notice how the first method extracted has ```return``` in front of it.  Delete the ```return``` and run the tests.
+* Inline "response" variable
+* Inline "getLegacyResponse" method
+* Inline "isInvalid" method
+* Checkout code to roll back
+
+Extract Parameter in LegacyService
+* Extract ```throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");``` to a method named "getLegacyResponse"
+* Extract "This vin is not valid" as a parameter to the "getLegacyResponse" method
+
 * Extract Field
 * Invert If condition with IntelliJ refactoring suggestions
 * Generate Test methods
