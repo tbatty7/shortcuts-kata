@@ -6,6 +6,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 @Service
 public class LegacyService {
+
     public LegacyResponse convert(LegacyRequest request, String identificationNo) {
         if (!identificationNo.startsWith("1")) {
             return LegacyResponse.builder().incomingRequest(null).id("Invalid").build();
