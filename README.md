@@ -58,6 +58,8 @@ Run tests before start and run them every few minutes to confirm refactor worked
   * Notice the checkbox that allows you to initialize in different places.  Initialize in field
 * Extract "Invalid" as a field named "invalidVinMessage"
   * Initialize in Constructor
+  * Extract it as parameter in Constructor
+  * Notice how the tests changed
 * Extract "This vin is not valid" as a field and name it "errorMessage"
   * Initialize in field
   * Check box to extract both instances of it
