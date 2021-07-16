@@ -52,9 +52,9 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Extract ```throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");``` to a method named "getLegacyResponse"
 * Extract "This vin is not valid" as a parameter to the "getLegacyResponse" method.  Name the parameter "errorMessage"
 * Inline the parameter
-* Extract "Invalid" as a parameter
+* Extract "Invalid" as a parameter named "invalidIdMessage"
 * Inline the parameter
-* Extract "1" as a parameter
+* Extract "1" as a parameter named "prefix"
 * Inline the parameter
 * Checkout code to roll back
 
