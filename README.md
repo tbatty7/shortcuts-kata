@@ -25,7 +25,7 @@ Run tests before start and run them every few minutes to confirm refactor worked
 
 #### Extract Variables in LegacyService
 * Extract "1" as a variable named "prefix"
-* Extract "Invalid" as a variable named "invalidVinMessage"
+* Extract "Invalid" as a variable named "invalidIdMessage"
 * Extract request.vin as a variable (both instances of it) and name it "vin"
 * Extract "This vin is not valid" as a variable (both instances of it) and name it "errorMessage"
 * Inline all four extracted variables
@@ -37,10 +37,12 @@ Run tests before start and run them every few minutes to confirm refactor worked
   * Inline the "buildResponse" method 
   * Change the builder so the incomingRequest is set first
   * Extract the method again and select the option to extract the second method also
-* Extract ```throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");``` to a method named "getLegacyResponse"
+* Extract ```throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");``` to a method named "getLegacyResponse()"
   * Select option to extract the second method also
   * Notice how the first method extracted has ```return``` in front of it.  Delete the ```return``` and run the tests.
-* Extract one of the if statements to a method and then inline it again
+* Extract this if statement ```if (request.vin.contains("test")) {
+                                           getLegacyResponse();
+                                       }``` to a method named "validate(request)" and then inline it again
 * Inline "response" variable
 * Inline "getLegacyResponse" method
 * Inline "isInvalid" method
