@@ -47,4 +47,11 @@ class LegacyServiceTest {
 
         legacyService.convert(request, "myId");
     }
+
+    @Test
+    void throwsRuntimeExceptionIfRequestHasTestBillFord() throws RuntimeException {
+        LegacyRequest request = LegacyRequest.builder().vin("123test").name("Bill Ford").build();
+
+        legacyService.convert(request, "myId");
+    }
 }

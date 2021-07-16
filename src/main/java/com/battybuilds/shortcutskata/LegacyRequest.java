@@ -11,4 +11,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class LegacyRequest {
     String vin;
+    String name;
 }

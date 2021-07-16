@@ -56,6 +56,8 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Inline the parameter
 * Extract "1" as a parameter named "prefix"
 * Inline the parameter
+* Extract the request.name in the "nameChecker(request)" method as a parameter named "name"
+  * Notice how the request parameter was replaced.
 * Checkout code to roll back
 
 #### Extract Field in LegacyService

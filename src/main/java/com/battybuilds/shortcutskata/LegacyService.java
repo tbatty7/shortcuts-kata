@@ -8,6 +8,7 @@ import org.springframework.web.server.ResponseStatusException;
 public class LegacyService {
 
     public LegacyResponse convert(LegacyRequest request, String identificationNo) {
+        nameChecker(request);
         if (!identificationNo.startsWith("1")) {
             return LegacyResponse.builder().incomingRequest(null).id("Invalid").build();
         }
@@ -21,6 +22,10 @@ public class LegacyService {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");
         }
         return response;
+    }
+
+    private void nameChecker(LegacyRequest request) {
+        if ("Bill Ford".equals(request.name)) throw new RuntimeException("Unexpected!");
     }
 
 }
