@@ -14,10 +14,11 @@ public class LegacyService {
 
         LegacyResponse response = LegacyResponse.builder().id(identificationNo).incomingRequest(request).build();
 
-        if (request.vin.isEmpty()) {
+        String vin = request.vin;
+        if (vin.isEmpty()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");
         }
-        if (request.vin.contains("test")) {
+        if (vin.contains("test")) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "This vin is not valid");
         }
         return response;

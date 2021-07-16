@@ -10,21 +10,24 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Inline Variable or Method - Ctrl+Alt+N (Windows) or Command+Option+N (MAC)
 * Extract Parameter - Ctrl+Alt+P (Windows) or Command+Option+P (Mac)
 * Extract Field - Ctrl+Alt+F (Windows) or Command+Option+F (Mac)
+* Rename method/variable/field/class - Shift+F6 (Windows and Mac)
 * Check for refactoring suggestions - Alt+Enter (Windows) or Control+Enter (Mac)
+  * Invert If statement
+  * Safe Delete unused parameter
 * Generate Test method - Alt+Insert (Windows) or Command+N (Mac)
 * Move line or whole method up - Ctrl+Shift+Up Arrow (Windows) or Command+Shift+Up Arrow (Mac)
 * Copy whole line - Have cursor on line with nothing highlighted and Ctrl+C or Command+C
 * Go to method signature - Ctrl+click (Windows) or Command+click (Mac)
 * Return to previous place/class - Ctrl+Alt+Left Arrow (Windows) or Command+Option+Left Arrow (Mac)
-* Expand selection to include the whole word/method/line - Ctrl+W
+* Expand selection to include the whole word/method/line - Ctrl+W (Windows) or Command+W (Mac)
 
 ## Practice Steps
 
 #### Extract Variables in LegacyService
-* Extract request.vin as a variable (both instances of it) and name it "vin"
-* Extract "This vin is not valid" as a variable (both instances of it) and name it "errorMessage"
 * Extract "1" as a variable named "prefix"
 * Extract "Invalid" as a variable named "invalidVinMessage"
+* Extract request.vin as a variable (both instances of it) and name it "vin"
+* Extract "This vin is not valid" as a variable (both instances of it) and name it "errorMessage"
 * Inline all four extracted variables
 
 #### Extract Methods in LegacyService
@@ -53,7 +56,7 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Inline the parameter
 * Checkout code to roll back
 
-#### Extract Field
+#### Extract Field in LegacyService
 * Extract "1" as a field named "prefix"
   * Notice the checkbox that allows you to initialize in different places.  Initialize in field
 * Extract "Invalid" as a field named "invalidVinMessage"
@@ -72,7 +75,12 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Inline the rest of the extracted fields
 * Checkout code to roll back
 
-
-* Invert If condition with IntelliJ refactoring suggestions
-* Generate Test methods
-
+#### Combination Shortcuts to Invert If condition in LegacyService
+* Using the shortcut, move the last two if statements to the top of the method
+* Inline the "response" variable
+* Invert If condition of ```
+if (!identificationNo.startsWith("1")) {
+                                        return LegacyResponse.builder().incomingRequest(null).id("Invalid").build();
+                                    }
+                                    ``` with IntelliJ refactoring suggestions
+* Checkout code to roll back
