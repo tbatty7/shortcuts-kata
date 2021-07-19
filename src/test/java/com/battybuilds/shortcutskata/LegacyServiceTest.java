@@ -5,8 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.web.client.HttpClientErrorException;
 
-import static org.junit.jupiter.api.Assertions.fail;
-
 class LegacyServiceTest {
 
     private LegacyService legacyService;
@@ -54,7 +52,7 @@ class LegacyServiceTest {
     void throwsRuntimeExceptionIfRequestHasTestBillFord() {
         LegacyRequest request = LegacyRequest.builder().vin("123test").name("Bill Ford").build();
 
-        Assertions.assertThatThrownBy(()->legacyService.convert(request, "myId"))
+        Assertions.assertThatThrownBy(() -> legacyService.convert(request, "myId"))
                 .isInstanceOf(RuntimeException.class)
                 .hasMessage("Unexpected!");
 
