@@ -25,7 +25,7 @@ public class LegacyService {
     }
 
     private void nameChecker(LegacyRequest request) {
-        if ("Bill Ford".equals(request.name)) throw new RuntimeException("Unexpected!");
+        if ("Bill Ford".equals(request.getName())) throw new RuntimeException("Unexpected!");
     }
 
 }
