@@ -66,6 +66,7 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Extract "Invalid" as a field named "invalidVinMessage"
   * Initialize in Constructor
   * Extract it as parameter in Constructor
+  * Add `@Value("${message}")` in front of it in method signature
   * Notice how the tests changed
 * Extract "This vin is not valid" as a field and name it "errorMessage"
   * Initialize in field
