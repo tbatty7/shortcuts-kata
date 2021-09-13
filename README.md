@@ -101,3 +101,17 @@ if (!identificationNo.startsWith("1")) {
 * Create test
 * Create BeforeEach method (setup method)
 * Delete the test class and checkout code to roll back
+
+#### Extracting a method to a new Class
+* Extract the initializing of the response variable to a method named returnResponse
+    * `LegacyResponse response = LegacyResponse.builder().id(identificationNo).incomingRequest(request).build();`
+* Inside the new method, on the first line, type `new LegacyClient();`
+* Use shortcut to create class from that constructor call
+* In the returnResponse method, extract `new LegacyClient()` as a parameter
+* Move method to LegacyClient class
+    * The LegacyClient is now being initialized in the convert method.
+* In convert method, extract the `new LegacyClient()` to a field
+    * Initialize it in the constructor
+* In the constructor, extract the `new LegacyClient()` as a parameter
+    * To make it compile, add the `@Service` annotation to the LegacyClient
+    * At this point, you would want to add a mock to the tests of LegacyService and create a new test class for the LegacyClient
