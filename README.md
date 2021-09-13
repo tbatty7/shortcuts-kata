@@ -14,7 +14,9 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Check for refactoring suggestions - Alt+Enter (Windows) or Control+Enter (Mac)
   * Invert If statement
   * Safe Delete unused parameter
+* Generate or go to Test Class - Ctrl+Shift+T (Windows) or Command+Shift+T (Mac)
 * Generate Test method - Alt+Insert (Windows) or Command+N (Mac)
+* Move method to another class - F6 (Windows and Mac)
 * Move line or whole method up - Ctrl+Shift+Up Arrow (Windows) or Command+Shift+Up Arrow (Mac)
 * Copy whole line - Have cursor on line with nothing highlighted and Ctrl+C or Command+C
 * Go to method signature - Ctrl+click (Windows) or Command+click (Mac)
@@ -80,7 +82,7 @@ Run tests before start and run them every few minutes to confirm refactor worked
 * Inline the rest of the extracted fields
 * Checkout code to roll back
 
-#### Combination Shortcuts to Invert If condition in LegacyService
+#### Combination Shortcuts to Invert If Condition in LegacyService
 * Using the shortcut, move the last two if statements to the top of the method
 * Inline the "response" variable
 * Invert If condition of ```
@@ -89,3 +91,13 @@ if (!identificationNo.startsWith("1")) {
                                     }
                                     ``` with IntelliJ refactoring suggestions
 * Checkout code to roll back
+
+#### Moving Methods to Another Class and Generating Tests
+* Move nameChecker method to the LegacyRequest class
+    * Notice that the tests are unchanged
+* Extract the bottom two if statments as two seperate methods
+* Move both of them to the LegacyRequest class.
+* Create test class for LegacyRequest class
+* Create test
+* Create BeforeEach method (setup method)
+* Delete the test class and checkout code to roll back
